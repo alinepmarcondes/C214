@@ -29,6 +29,9 @@ describe('ToDoList', () => {
             expect(tasks).toEqual([])
           })
 
+    })
+
+    describe('Testing update', () => {
           test('Should update a task', () => {
             const todoInstance = new ToDoList();
             todoInstance.add(groceriesTask);
@@ -49,7 +52,7 @@ describe('ToDoList', () => {
                 ...groceriesTask,
                 ...newGroceriesTask
             });
-        });
+        });   
 
         test('Should update a task with the same parameters', () => {
             const todoInstance = new ToDoList();
@@ -62,6 +65,9 @@ describe('ToDoList', () => {
             expect(updateSameTask).toThrow(Error);
         });
 
+    }) 
+    
+    describe('Testing remove', () => {
         test('Should remove a task', () => {
             const todoInstance = new ToDoList();
             todoInstance.add(groceriesTask);
@@ -81,5 +87,6 @@ describe('ToDoList', () => {
         
             expect(removeUnexistingTask).toThrow(Error);
         });
-    })
+    
+    })     
 })
